@@ -2,3 +2,10 @@ GET http://localhost:3333/jokes
 ###
 GET http://localhost:3333/jokes/1
 ###
+
+POST http://localhost:3333/jokes
+Content-Type: application/application/json
+
+{
+  "joke": "something"
+}
