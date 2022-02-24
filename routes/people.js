@@ -1,6 +1,6 @@
 import express from 'express';
 import { nanoid } from 'nanoid';
-import Joke from '../models/Joke.js';
+import Person from '../models/Person.js';
 
 const router = express.Router();
 
@@ -10,8 +10,8 @@ const router = express.Router();
  */
 router.get('/', async (req, res, next) => {
   try {
-    const jokes = await Joke.find();
-    res.json(jokes);
+    const people = await Person.find();
+    res.json(people);
   } catch (error) {
     next(error);
   }
@@ -24,8 +24,8 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
-    const joke = await Joke.findById(id);
-    res.json(joke);
+    const person = await Person.findById(id);
+    res.json(person);
   } catch (error) {
     next(error);
   }
@@ -38,8 +38,8 @@ router.get('/:id', async (req, res, next) => {
 /** */
 router.post('/', async (req, res, next) => {
   try {
-    const joke = await Joke.create(req.body);
-    res.json(joke);
+    const person = await Person.create(req.body);
+    res.json(person);
   } catch (error) {
     next(error);
   }
@@ -53,10 +53,10 @@ router.post('/', async (req, res, next) => {
 router.patch('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
-    const joke = await Joke.findByIdAndUpdate(id, req.body, {
+    const person = await Person.findByIdAndUpdate(id, req.body, {
       new: true,
     });
-    res.json(joke);
+    res.json(person);
   } catch (error) {
     next(error);
   }
@@ -70,8 +70,8 @@ router.patch('/:id', async (req, res, next) => {
 router.delete('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
-    const joke = await Joke.findByIdAndDelete(id);
-    if (joke) {
+    const person = await Person.findByIdAndDelete(id);
+    if (person) {
       res.sendStatus(200);
     } else {
       res.sendStatus(400);

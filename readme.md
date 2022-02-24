@@ -30,3 +30,15 @@ Test it with REST Client.
 
 Create a `DELETE` `/joke/:id` route, that deletes the joke for the given id.  
 Test it with REST Client.
+
+## Tech stacl
+
+- MongoDB
+- Mongoose
+
+## Installation
+
+- Clone repo;
+- `npm i`
+- create local env file: `cp .env.example .env`
+- start development: `node .`

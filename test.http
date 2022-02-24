@@ -1,24 +1,46 @@
 GET http://localhost:3333/jokes/
 
+###
+GET http://localhost:3333/people/
 
 ###
-GET http://localhost:3333/jokes/v8j9ysvCTIT8WhRyB3-OK
+GET http://localhost:3333/jokes/62177245c28954e58e9d9743
 ###
 
-POST http://localhost:3333/jokes
+POST http://localhost:3333/people/
 Content-Type: application/json
 
 {
-  "joke":"new joke"
+"name": "Maggie",
+"email": "bla@neuefische.de"
 }
 ###
-
-PATCH http://localhost:3333/jokes/2 
+POST http://localhost:3333/jokes/
 Content-Type: application/json
 
 {
-  "joke": "updated joke"
+"text": "Test joke",
+"author": "Jane Doe"
+}
+
+###
+PATCH http://localhost:3333/jokes/62177245c28954e58e9d9743
+Content-Type: application/json
+
+{
+"text": "This is changed again"
 }
 ###
 
-DELETE http://localhost:3333/jokes/2 
+
+PATCH http://localhost:3333/people/6217a9152db920398a558583
+Content-Type: application/json
+
+{
+"email": "This is a new email"
+}
+###
+DELETE http://localhost:3333/jokes/62179f6613a0cc274431302a
+
+###
+DELETE http://localhost:3333/people/6217a9152db920398a558583
