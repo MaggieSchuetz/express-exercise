@@ -1,11 +1,24 @@
-GET http://localhost:3333/jokes
+GET http://localhost:3333/jokes/
+
+
 ###
-GET http://localhost:3333/jokes/1
+GET http://localhost:3333/jokes/v8j9ysvCTIT8WhRyB3-OK
 ###
 
 POST http://localhost:3333/jokes
-Content-Type: application/application/json
+Content-Type: application/json
 
 {
-  "joke": "something"
+  "joke":"new joke"
 }
+###
+
+PATCH http://localhost:3333/jokes/2 
+Content-Type: application/json
+
+{
+  "joke": "updated joke"
+}
+###
+
+DELETE http://localhost:3333/jokes/2 
